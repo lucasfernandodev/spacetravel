@@ -1,0 +1,82 @@
+.heading1,
+.heading2,
+.heading3,
+.heading4,
+.heading1{
+  font-family: var(--typography-serif);
+  color: var(--color-typography-light);
+  font-weight: 400;
+}
+
+.heading5,
+.subHeading2,
+.navText{
+  font-family: var(--typography-sans-condensed);
+  color: var(--color-typography-light);
+}
+
+.heading1{
+  font-size: clamp(80px,100vw,150px);
+}
+
+.heading2{
+  font-size: clamp(56px,100vw,100px);
+}
+
+.heading3{
+  font-size: clamp(24px,100vw,56px);
+}
+
+.heading4{
+  font-size: clamp(16px,100vw,32px);
+}
+
+.heading5{
+  font-size: clamp(16,100vw,28px);
+  letter-spacing: 4.72px;
+}
+
+.subHeading1{
+  font-size: 28px;
+}
+
+.subHeading2{
+  font-size: 14px;
+  letter-spacing: 2.36px;
+}
+
+.navText{
+  font-size: 16px;
+  letter-spacing: 2.7px;
+}
+
+.Text{
+  color: var(--color-typography-light);
+  font-family: var(--typography-sans);
+  line-height: 32px;
+  font-size: clamp(15px,40vw,18px);
+}
+
+@media (max-width: 719px){
+
+.heading1{
+  font-size: clamp(80px,4.8vw,150px);
+}
+
+.heading2{
+  font-size: clamp(56px,0,100px);
+}
+
+.heading3{
+  font-size: clamp(24px,0,56px);
+}
+
+.heading4{
+  font-size: clamp(16px,0,32px);
+}
+
+.heading5{
+  font-size: clamp(16,0,28px);
+  letter-spacing: 2.7px;
+}
+}

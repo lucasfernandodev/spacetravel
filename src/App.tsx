@@ -1,5 +1,10 @@
+import Typography from "./components/utils/Typography"
+
 function App() {
-  return <h1>Hy</h1>
+  return (
+    <div>
+    </div>
+  )
 }
 
 export default App

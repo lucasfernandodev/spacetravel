@@ -1,0 +1,10 @@
+:root{
+  --typography-serif: 'Bellefair', serif;
+  --typography-sans: 'Barlow', sans-serif;
+  --typography-sans-condensed: 'Barlow Condensed', sans-serif;
+
+
+  --color-typography-light: #fff;
+  --color-typography-light-medium: #D0D6F9;
+
+}
