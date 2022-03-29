@@ -1,0 +1,17 @@
+.header{
+  position: absolute;
+  top: 40px;
+  left: 55px;
+  height: 96px;
+  width: 100%;
+  max-width: calc(100vw - 55px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-height: 750px){
+  .header{
+    height: 64px
+  }
+}

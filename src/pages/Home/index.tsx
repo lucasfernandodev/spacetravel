@@ -3,17 +3,12 @@ import Container from "../../components/utils/container";
 import Typography from "../../components/utils/Typography";
 import Layout from "../../components/utils/Layout";
 import Navigation from "../../components/Navigation";
+import Header from "../../components/Header";
 
 const Home = () => {
   return (
     <Layout className={style.home}>
-      <header>
-          <div className="brand">
-            <img src="/src/assets/images/logo.svg" alt="logo" />
-          </div>
-          <div className="row"></div>
-          <Navigation />
-        </header>
+      <Header />
       <Container el="section" className={style.container}>
         <section className={style.welcome}>
           <Typography mask="heading5">SO, YOU WANT TO TRAVEL TO</Typography>
