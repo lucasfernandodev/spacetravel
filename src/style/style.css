@@ -4,10 +4,3 @@
 body{
   background: #0B0D17;
 }
-
-div{
-  max-width: 80vw;
-  display: flex;
-  gap: 18px;
-  flex-direction: column;
-}

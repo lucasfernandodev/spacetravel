@@ -1,0 +1,52 @@
+.home{
+  width: 100%;
+  min-height: 100vh;
+  background: url(/src/lib/assets/home/background-home-desktop.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.home .container{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 120px;
+}
+
+.home header{
+  position: absolute;
+  top: 40px;
+  left: 55px;
+  height: 96px;
+  width: 100%;
+  max-width: calc(100vw - 55px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.home .welcome{
+  max-width: 450px;
+} 
+
+.home .explorer{
+
+}
+.home .btnExplorer{
+  width: 274px;
+  height: 274px;
+  background: #fff;
+  color: #0B0D17;
+  font-family: var(--typography-serif);
+  border-radius: 50%;
+  font-size: 32px;
+  border: unset;
+  text-transform: uppercase;
+  transition: 250ms linear;
+  cursor: pointer;
+}
+
+.home .btnExplorer:hover{
+  box-shadow: 0px 0px 0px 88px #979797;
+}

@@ -1,0 +1,18 @@
+.container{
+  width: 100%;
+  max-width: calc(100vw - 22.9166666667vw);
+  margin: 0 auto;
+  height: 100vh;
+}
+
+@media (max-width: 720px){
+  .container{
+    max-width: calc(100vw - 4.72222222222vw);
+  }
+}
+
+@media (max-width: 375){
+  .container{
+    max-width: calc(100vw - 50px);
+  }
+}

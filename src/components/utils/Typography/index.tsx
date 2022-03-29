@@ -9,7 +9,7 @@ interface ClassList {
 
 interface TypographyProps extends React.HTMLAttributes<HTMLOrSVGElement>{
   className?: string | undefined,
-  mask: Mask,
+  mask?: Mask,
   el?: Element
 }
 
@@ -26,6 +26,10 @@ const element: Record<Element, string> = {
 }
 
 const TypographyMask: Record<Mask, ClassList> = {
+  'default': {
+    class: style.default,
+    defaultElement: element.span,
+  },
   'heading1': {
     class: style.heading1,
     defaultElement: element.h1
@@ -65,7 +69,7 @@ const TypographyMask: Record<Mask, ClassList> = {
 }
 
 const Typography:React.FC<TypographyProps> = ({
-  mask,
+  mask = 'default',
   children,
   el,
   className: cn,
