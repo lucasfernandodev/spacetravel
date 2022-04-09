@@ -38,7 +38,7 @@
 }
 
 .heading5 {
-  font-size: clamp(16px, 1.94444444444, 28px);
+  font-size: clamp(16px, 1.94444444444vw, 28px);
   letter-spacing: 4.72px;
   color: var(--color-typography-light-medium);
   font-weight: 400;
@@ -67,7 +67,7 @@
   font-size: clamp(15px, 1.19760479042vw, 18px);
 }
 
-@media(max-height: 750px){
+@media(max-height: 800px){
   .heading1{
     line-height: 1.2;
   }
@@ -89,14 +89,17 @@
   }
   
   .heading5 {
-    font-size: clamp(16px, 1.94444444444, 28px);
+    font-size: clamp(16px, 1.94444444444vw, 20px);
     letter-spacing: 4.72px;
     color: var(--color-typography-light-medium);
     font-weight: 400;
   }
+  .subHeading1 {
+    font-size: 24px;
+  }
 }
 
-@media (max-width: 720px) {
+/* @media (max-width: 720px) {
   .heading1 {
     font-size: clamp(80px, 100vw, 150px);
   }
@@ -142,7 +145,7 @@
     font-size: clamp(16, 0, 28px);
     letter-spacing: 2.7px;
   }
-}
+} */
 
 .default{
   font-size: inherit;

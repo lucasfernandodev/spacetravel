@@ -1,26 +1,58 @@
-.navigation{
+.navigation {
   width: 59.0277777778vw;
   height: 100%;
 }
-.navigation ul{
+
+.navigation ul {
   list-style: none;
   max-width: 59.0277777778vw;
   height: 100%;
   gap: 48px;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(81.5485px);
+
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
-.navigation ul li{
+.navigation ul::before {
+  --paddingLeft: 47px;
+  --position: calc(32.8472222222vw - var(--paddingLeft));
+  content: "";
+  width: 32.8472222222vw;
+  height: 1px;
+  opacity: 25.15%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  right: calc(100% - var(--paddingLeft));
+  transform: translateY(-50%);
+}
+
+.navigation ul::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 1);
+  opacity: 4%;
+  backdrop-filter: blur(81.5485px);
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.navigation ul li {
   height: 100%;
 }
 
-.navigation ul li a{
+.navigation ul li a {
   text-decoration: none;
   color: var(--color-typography-light);
   display: flex;
@@ -28,17 +60,15 @@
   height: 100%;
   text-transform: uppercase;
 
-
   border-bottom: 3px solid transparent;
   transition: 350ms linear;
 }
 
-.navigation ul li a:hover{
-
+.navigation ul li a:hover {
   border-bottom: 3px solid #ffffff33;
 }
 
-.navigation ul li a .navLink{
+.navigation ul li a .navLink {
   font-weight: bold;
   display: flex;
   gap: 11px;
@@ -47,11 +77,17 @@
   pointer-events: none;
 }
 
-.navigation ul li a .navLink *:first-child{
+.navigation ul li a .navLink *:first-child {
   font-weight: bold;
 }
 
-.active{
+.active {
   border-bottom: 3px solid #fff !important;
   transition: 250ms ease-in-out;
+}
+
+@media (max-height: 700px){
+  .navigation ul::before {
+    --paddingLeft: 42px;
+  }
 }

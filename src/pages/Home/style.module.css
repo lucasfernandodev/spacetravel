@@ -14,8 +14,6 @@
 }
 
 
-
-
 .home .welcome{
   max-width: 450px;
 } 
@@ -39,7 +37,7 @@
   box-shadow: 0px 0px 0px 88px #979797af;
 }
 
-@media (max-height: 750px){
+@media (max-height: 800px){
   .home .btnExplorer{
     width: 200px;
     font-size: 24px;

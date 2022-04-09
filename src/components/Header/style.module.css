@@ -1,17 +1,35 @@
+:root{
+  --headerHeight: 96px;
+}
+
 .header{
   position: absolute;
   top: 40px;
   left: 55px;
-  height: 96px;
+  height: var(--headerHeight);
   width: 100%;
   max-width: calc(100vw - 55px);
   display: flex;
+  align-items: center;
   justify-content: space-between;
   align-items: center;
 }
 
-@media (max-height: 750px){
-  .header{
-    height: 64px
+.header img{
+  height: 100%;
+  max-height: var(--headerHeight);
+  width: auto;
+  max-width: auto;
+}
+
+@media (max-height: 800px){
+  :root{
+    --headerHeight: 64px;
+  }
+}
+
+@media (max-height: 690px){
+  :root{
+    --headerHeight: 54px;
   }
 }

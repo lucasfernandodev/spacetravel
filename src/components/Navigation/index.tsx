@@ -1,61 +1,70 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Typography from "../utils/Typography";
 import style from "./style.module.css";
 
 const Navigation = () => {
 
-  function handlerClick(e: MouseEvent){
-    e.preventDefault();
+  const currentPath = useLocation()
+  const navigationRef = useRef<HTMLElement>(null);
 
-    const link = e.target as HTMLAnchorElement;
-    document.querySelectorAll('a').forEach(e => e.classList.remove(style.active));
-
-    link !== null && link.classList.add(style.active)
-  }
-
+  
   useEffect(() => {
-    const allLinks = document.querySelectorAll('a');
-    allLinks.forEach(link => {
-      link.addEventListener('click', e => handlerClick(e))
-    })
+    if(navigationRef.current){
+
+      const navigation = navigationRef.current;
+      const navigationLinks = navigation.querySelectorAll('a');
+
+      navigationLinks.forEach(link => {
+
+        link.classList.remove(style.active)
+  
+        if(link.pathname === currentPath.pathname){
+          link !== null && link.classList.add(style.active)
+        }
+        
+        link.onclick = () => link.classList.add(style.active);
+      })
+    }
   }, [])
+  
   return (
-    <nav className={style.navigation}>
+    <nav className={style.navigation} ref={navigationRef}>
       <ul className="navigation">
         <li>
-          <a href="#" className={style.active}>
+          <Link to="/" className={style.active}>
             <Typography mask="navText" className={style.navLink}>
               <Typography mask="default">00</Typography>
               <Typography mask="default">Home</Typography>
             </Typography>
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#">
+          <Link to="/destination">
             <Typography mask="navText" className={style.navLink}>
               <Typography mask="default">01</Typography>
               <Typography mask="default">DESTINATION</Typography>
             </Typography>
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#">
+          <Link to="/Crew">
             <Typography mask="navText"  className={style.navLink}>
               <Typography mask="default">02</Typography>
               <Typography mask="default">CREW</Typography>
             </Typography>
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#">
+          <Link to="/Technology">
             <Typography mask="navText" className={style.navLink}>
               <Typography mask="default">03</Typography>
               <Typography mask="default">TECHNOLOGY</Typography>
             </Typography>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
