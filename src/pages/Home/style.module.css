@@ -2,21 +2,38 @@
   width: 100%;
   min-height: 100vh;
   background: url(/src/lib/assets/home/background-home-desktop.jpg);
-  background-size: 100% 100%;
+  background-size: 900px cover;
   background-repeat: no-repeat;
 }
 
 .home .container{
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
-  padding-bottom: 120px;
+  padding-top: calc(2 * var(--headerHeight));
+  align-content: center;
 }
 
 
 .home .welcome{
   max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 } 
+
+.home .welcome .subTitle{
+  margin-bottom: 24px;
+}
+
+.home .welcome .description{
+  color: var(--color-typography-light-medium);
+  margin-top: 24px;
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+}
 
 
 .home .btnExplorer{
@@ -37,6 +54,12 @@
   box-shadow: 0px 0px 0px 88px #979797af;
 }
 
+@media (min-height: 900px){
+  .home{
+    background-size: cover;
+  }
+}
+
 @media (max-height: 800px){
   .home .btnExplorer{
     width: 200px;
@@ -47,4 +70,83 @@
   .home .btnExplorer:hover{
     box-shadow: 0px 0px 0px 44px #979797af;
   }
+}
+
+@media (max-width: 768px){
+  .home{
+    background-image: url("../../lib/assets/home/background-home-tablet.jpg");
+  }
+
+  .home .container{
+    justify-content: center;
+    padding-bottom: 0;
+    align-items: center;
+    padding-top: var(--headerHeight);
+    gap: 156px;
+  }
+
+  .home .container .welcome{
+    align-items: center;
+  }
+
+  .home .container .welcome *{
+    text-align: center;
+  }
+
+  .home .btnExplorer{
+    width: 242px;
+    height: 242px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 900px){
+
+  .home::after {
+    background-size: cover;
+  }
+
+  .home .container{
+    padding: calc(var(--headerHeight) + 32px) 0;
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 490px){
+  .home{
+    background-image: url("../../lib/assets/home/background-home-mobile.jpg");
+    background-size: cover;
+  }
+
+  .home .container{
+    gap: 81px;
+    padding-top: calc(1 * var(--headerHeight) + 16px);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .home .welcome{
+    width: 100%;
+    max-width: 100%;
+    max-width: 327px;
+  } 
+
+  .home .welcome .subTitle{
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .home .welcome .description{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  
+
+  .home .btnExplorer{
+    width: 150px;
+    height: 150px;
+  }
+
 }

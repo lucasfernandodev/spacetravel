@@ -81,11 +81,11 @@ const Destination = () => {
           <Typography mask="Text" className={style.description}>{currentData.description}</Typography>
           <hr />
           <div className={style.info}>
-            <div className="planets-distance">
+            <div className={style.infoSpace}>
               <Typography mask="subHeading2" className={style.subTitle}>AVG. DISTANCE</Typography>
               <Typography mask="subHeading1">{currentData.distance}</Typography>
             </div>
-            <div className="planets-distance-time">
+            <div className={style.infoSpace}>
               <Typography mask="subHeading2" className={style.subTitle}>Est. travel time</Typography>
               <Typography mask="subHeading1">{currentData.travel}</Typography>
             </div>

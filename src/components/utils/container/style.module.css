@@ -5,14 +5,20 @@
   height: 100vh;
 }
 
+@media (max-width: 920px){
+  .container{
+    max-width: calc(100vw - 11.4166666667vw);
+  }
+}
+
 @media (max-width: 720px){
   .container{
     max-width: calc(100vw - 4.72222222222vw);
   }
 }
 
-@media (max-width: 375){
+@media (max-width: 690px){
   .container{
-    max-width: calc(100vw - 50px);
+    max-width: calc(100vw - 24px);
   }
 }

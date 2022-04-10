@@ -1,6 +1,11 @@
 .navigation {
   width: 59.0277777778vw;
+  min-width: 450px;
   height: 100%;
+}
+
+.navigation .btnNavigation{
+  display: none;
 }
 
 .navigation ul {
@@ -16,6 +21,8 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(9px);
 }
 
 .navigation ul::before {
@@ -24,29 +31,15 @@
   content: "";
   width: 32.8472222222vw;
   height: 1px;
-  opacity: 25.15%;
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  display: block;
   position: absolute;
   top: 50%;
   right: calc(100% - var(--paddingLeft));
   transform: translateY(-50%);
 }
 
-.navigation ul::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: rgba(255, 255, 255, 1);
-  opacity: 4%;
-  backdrop-filter: blur(81.5485px);
-  width: 100%;
-  height: 100%;
-  display: block;
-}
+
 
 .navigation ul li {
   height: 100%;
@@ -64,6 +57,10 @@
   transition: 350ms linear;
 }
 
+.navigation ul li a  *{
+  font-size: 16px;
+}
+
 .navigation ul li a:hover {
   border-bottom: 3px solid #ffffff33;
 }
@@ -77,12 +74,16 @@
   pointer-events: none;
 }
 
+.navigation ul li a *{
+  font-size: 14px;
+}
+
 .navigation ul li a .navLink *:first-child {
   font-weight: bold;
 }
 
 .active {
-  border-bottom: 3px solid #fff !important;
+  border-bottom: 3px solid #fff;
   transition: 250ms ease-in-out;
 }
 
@@ -90,4 +91,100 @@
   .navigation ul::before {
     --paddingLeft: 42px;
   }
+}
+
+@media (max-width: 1200px){
+  .navigation ul::before{
+    display: none;
+  }
+
+  .navigation ul .indicator{
+    display: none;
+  }
+}
+
+@media (max-width: 768px){
+  .navigation{
+    max-width: 450px;
+  }
+  
+  .navigation ul {
+    max-width: 100%;
+    padding: 0;
+    gap: 37px;
+    min-width: 450px;
+  }
+
+  .navigation ul li *{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 450px){
+  .navigation{
+    width: auto;
+    max-width: unset;
+    min-width: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation ul{
+    position: fixed;
+    width: 67.7333333333vw;
+    min-width: 254px;
+    max-width: unset;
+    height: 100vh;
+    min-height: unset;
+    top: 0px;
+    right: 0px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+  }
+
+
+  
+  .navigation ul li{
+    width: 100%;
+    height: auto;
+  }
+
+  .navigation ul li a{
+    border: 0px;
+    border-bottom: unset;
+    border-right: 3px solid transparent;
+    padding-left: 32px;
+  }
+
+  .navigation ul li .indicator{
+    display: flex;
+  }
+
+  .navigation ul li a.active {
+    border-bottom: 0px;
+    border-right: 3px solid #fff;
+    transition: 250ms ease-in-out;
+  }
+  
+
+  .navigation .btnNavigation{
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navigation .btnNavigation svg{
+    stroke: #fff;
+    width: 34px;
+    height: 34px;
+  }
+
+  
 }

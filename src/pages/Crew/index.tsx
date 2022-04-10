@@ -1,5 +1,8 @@
+import style from './style.module.css'
 const Crew = () => {
-  return <h1>Crew</h1>
+  return (
+  
+    )
 }
 
 export default Crew;

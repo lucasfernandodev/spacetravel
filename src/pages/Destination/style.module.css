@@ -32,12 +32,14 @@
   min-height: 100vh;
   justify-content: space-between;
   padding-top: var(--headerHeight);
+  align-content: center;
 }
 
 .presentation{
   display: flex;
   flex-direction: column;
   gap: 100px;
+  max-width: 573px;
 }
 
 .presentation .presentationTitle{
@@ -111,6 +113,7 @@
   border-color: #383B4B;
   border-style: solid;
   margin-top: 54px;
+  width: 100%;
   margin-bottom: 30px;
 }
 
@@ -121,6 +124,13 @@
   color: #fff;
   text-transform: uppercase;
   width: 100%;
+}
+
+.page .info .infoSpace{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .page .info .subTitle{
@@ -150,19 +160,28 @@
   .page{
     margin-top: 50px;
     max-width: 420px;
+
   }
 
   .page .title{
     text-transform: uppercase;
-    margin-top: 15px;
+    margin-top: 37px;
+  }
+
+  .page.description{
+    margin-top: 14px;
   }
 
   .page hr{
     border-color: #383B4B;
     border-style: solid;
-    margin-top: 32px;
+    margin-top: 16px;
     margin-bottom: 20px;
   }
+  .page .info .infoSpace{
+    gap: 6px;
+  }
+
 }
 
 @media (min-height: 900px){
@@ -186,3 +205,90 @@
   }
 }
 
+
+@media (max-width: 1100px){
+  .presentation img{
+    padding-left: 30px;
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 1000px){
+  .page{
+    max-width: 350px
+  }
+}
+
+@media (max-width: 768px){
+  .destination::after {
+    background-image: url(../../lib/assets/destination/background-destination-tablet.jpg);
+  }
+
+  .container{
+    justify-content: center;
+    align-items: center;
+    gap: 53px;
+  }
+
+  .presentation{
+    gap: 60px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: 573px;
+  }
+
+  .presentation .presentationTitle{
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .presentation img{
+    padding-left: 30px;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .page{
+    max-width: 573px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page .description{
+    text-align: center;
+  }
+  .page .pageNavigation ul li *{
+   font-size: 16px;
+  }
+
+  .page hr{
+    margin-top: 36px;
+    margin-bottom: 28px;
+  }
+
+  .page .info{
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 900px){
+  .destination::after {
+    background-size: cover;
+  }
+  .container{
+    padding: calc(var(--headerHeight) + 32px) 0;
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 730px){
+  .presentation,
+  .page{
+    width: 100%;
+    max-width: calc(100% - 48px);
+  }
+}
