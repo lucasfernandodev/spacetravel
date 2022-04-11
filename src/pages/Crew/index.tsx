@@ -164,6 +164,10 @@ const Crew = () => {
           onTouchStart={e => onTouchStartHandle(e)}
           onTouchEnd={e => onTouchEndHandle(e)}
         >
+                    <Typography mask="heading5" className={style.presentationTitleMobile}>
+            <span>02</span>
+            Meet your crew
+          </Typography>
           <img src={currentData.images.png} alt={currentData.name} />
         </section>
       </Container>

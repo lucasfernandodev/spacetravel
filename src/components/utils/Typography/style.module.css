@@ -112,10 +112,12 @@
 }
 
 
-@media (max-width: 490px){
+@media (max-width: 690px){
   :root{
     --h1-maxSize: 80px;
     --h2-maxSize: 56px;
+    --h3-maxSize: 24px;
+    --h4-maxSize: 18px;
     --h5-maxSize: 16px;
     --text-maxSize: 16px;
     --subHeader1-maxSize: 20px;

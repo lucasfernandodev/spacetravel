@@ -25,6 +25,7 @@
 
 @media (max-width: 690px){
   .container{
-    max-width: calc(100vw - 24px);
+    
+    max-width: calc(100vw - 48px);
   }
 }
