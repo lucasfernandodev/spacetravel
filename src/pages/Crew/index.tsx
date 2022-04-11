@@ -16,13 +16,22 @@ interface CrewInterface {
   bio: string;
 }
 
+interface touchEvents {
+  end: any | null,
+  start:  any | null,
+}
+
 const Crew = () => {
+
   const crew: CrewInterface[] = database.crew;
 
   const sliderRef = useRef<HTMLElement>(null);
   const [currentSlider, setCurrentSlider] = useState<number>(0);
   const [currentData, setCurrentData] = useState(crew[0]);
+  const [touchEvent, setTouchEvent] = useState<touchEvents>({start: null, end: null})
   let timer: any = null;
+  let timerStart:any = null;
+  let timerEnd:any = null;
 
   function handleWheel(e: any) {
     e.stopPropagation();
@@ -56,6 +65,23 @@ const Crew = () => {
     }
   }
 
+  function onTouchStartHandle(e :React.TouchEvent<HTMLElement>){
+    clearTimeout(timerStart)
+
+    timerStart = setTimeout(()=>{
+      setTouchEvent({...touchEvent, start : e.changedTouches[0].clientX})
+    },300)
+  }
+
+  function onTouchEndHandle(e :React.TouchEvent<HTMLElement>){
+    clearTimeout(timerEnd)
+
+    timerEnd = setTimeout(()=>{
+      setTouchEvent({...touchEvent, end : e.changedTouches[0].clientX})
+    },300)
+  }
+
+
   useEffect(() => {
 
     if (sliderRef.current) {
@@ -72,6 +98,25 @@ const Crew = () => {
     }
   }, [currentSlider]);
 
+  useEffect(() =>{
+
+    if(touchEvent.start !== null && touchEvent.end !== null){
+      const slide = touchEvent.start - touchEvent.end;
+
+      if (slide > 0) {
+        if (currentSlider + 1 < crew.length) {
+          setCurrentSlider(currentSlider + 1);
+        }
+      } else {
+        if (currentSlider - 1 >= 0) {
+          setCurrentSlider(currentSlider - 1);
+        }
+      }
+    }
+   
+
+  }, [touchEvent.end])
+
   return (
     <Layout className={style.crew}>
       <Header />
@@ -80,6 +125,8 @@ const Crew = () => {
           className={style.sliderMain}
           ref={sliderRef}
           onWheel={(e) => handleWheel(e)}
+          onTouchStart={e => onTouchStartHandle(e)}
+          onTouchEnd={e => onTouchEndHandle(e)}
         >
           <Typography mask="heading5" className={style.presentationTitle}>
             <span>02</span>
@@ -97,6 +144,8 @@ const Crew = () => {
               {currentData.bio}
             </Typography>
           </div>
+
+
           <div className={style.sliderIndicators}>
             {crew.map((n, index) => { return typeof n.role !== 'undefined' ? (
               <div
@@ -110,7 +159,11 @@ const Crew = () => {
             ) : null})}
           </div>
         </section>
-        <section className={style.sliderImage}>
+        <section 
+          className={style.sliderImage}
+          onTouchStart={e => onTouchStartHandle(e)}
+          onTouchEnd={e => onTouchEndHandle(e)}
+        >
           <img src={currentData.images.png} alt={currentData.name} />
         </section>
       </Container>
