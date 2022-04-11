@@ -85,6 +85,9 @@
 @media (max-width: 768px) and (min-height: 1024px){
   :root{
     --h2-maxSize: 80px;
+    --h3-maxSize: 40px;
+    --h4-maxSize: 24px;
+    --h5-maxSize: 20px;
   }
 }
 
@@ -92,6 +95,8 @@
   :root{
     --h1-maxSize: 116px;
     --h2-maxSize: 80px;
+    --h3-maxSize: 40px;
+    --h4-maxSize: 24px;
     --h5-maxSize: 17px;
     --text-maxSize: 16px;
     --subHeader1-maxSize: 20px;

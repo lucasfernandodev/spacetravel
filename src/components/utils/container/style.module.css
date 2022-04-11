@@ -5,6 +5,12 @@
   height: 100vh;
 }
 
+@media (max-width: 1030px){
+  .container{
+    max-width: calc(100vw - 14.5vw);
+  }
+}
+
 @media (max-width: 920px){
   .container{
     max-width: calc(100vw - 11.4166666667vw);

@@ -26,7 +26,7 @@ const Navigation = () => {
         link.onclick = () => link.classList.add(style.active);
       })
     }
-  }, [])
+  }, [currentPath])
   
   return (
     <nav className={style.navigation} ref={navigationRef}>
@@ -43,7 +43,7 @@ const Navigation = () => {
       <ul className="navigation">
       <div className={style.glass}></div>
         <li>
-          <Link to="/" className={style.active}>
+          <Link to="/">
             <Typography mask="navText" className={style.navLink}>
               <Typography mask="default" className={style.indicator}>00</Typography>
               <Typography mask="default">Home</Typography>

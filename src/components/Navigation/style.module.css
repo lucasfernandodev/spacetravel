@@ -82,7 +82,7 @@
   font-weight: bold;
 }
 
-.active {
+.navigation ul li a.active {
   border-bottom: 3px solid #fff;
   transition: 250ms ease-in-out;
 }
