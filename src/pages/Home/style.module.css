@@ -150,3 +150,17 @@
   }
 
 }
+
+@media (max-width:360px){
+  .home .container{
+    padding-top: calc(1 * var(--headerHeight) + 8px);
+    align-content: center;
+    gap: 32px;
+  }
+
+  .home .btnExplorer{
+    width: 150px;
+    height: 150px;
+    font-size: 16px;
+  }
+}

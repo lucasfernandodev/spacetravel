@@ -120,7 +120,7 @@
   }
 }
 
-@media (max-width: 450px){
+@media (max-width: 690px){
   .navigation{
     width: auto;
     max-width: unset;
@@ -128,6 +128,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+
+  .navigation .btnNavigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+    width: 34px;
+    height: 34px;
+  }
+
+  .navigation .btnNavigation svg{
+    stroke: #fff;
+  }
+  .navigation .btnNavigation svg:not(.menuClose){
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .menuClose{
+    display: none;
+  }
+
+  .menuOpen{
+    color: inherit;
   }
 
   .navigation ul{
@@ -141,13 +171,17 @@
     right: 0px;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+    gap: 32px;
+    justify-content: flex-start;
+    padding-top: 125px;
+    align-items: flex-start;
     overflow: hidden;
     display: none;
   }
 
+  .navigation ul.active{
+    display: flex;
+  }
 
   
   .navigation ul li{
@@ -158,7 +192,7 @@
   .navigation ul li a{
     border: 0px;
     border-bottom: unset;
-    border-right: 3px solid transparent;
+    border-right: 4px solid transparent;
     padding-left: 32px;
   }
 
@@ -168,23 +202,11 @@
 
   .navigation ul li a.active {
     border-bottom: 0px;
-    border-right: 3px solid #fff;
+    border-right: 4px solid #fff;
     transition: 250ms ease-in-out;
   }
   
 
-  .navigation .btnNavigation{
-    display: flex;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .navigation .btnNavigation svg{
-    stroke: #fff;
-    width: 34px;
-    height: 34px;
-  }
 
   
 }

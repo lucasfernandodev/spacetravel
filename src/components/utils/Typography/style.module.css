@@ -124,6 +124,22 @@
   }
 }
 
+@media (max-width: 360px){
+  :root{
+    --h1-maxSize: 64px;
+    --h2-maxSize: 56px;
+    --h3-maxSize: 24px;
+    --h4-maxSize: 18px;
+    --h5-maxSize: 16px;
+    --text-maxSize: 16px;
+    --subHeader1-maxSize: 20px;
+  }
+
+  .Text {
+    line-height: 22px;
+  }
+}
+
 /* @media (max-width: 720px) {
   .heading1 {
     font-size: clamp(80px, 100vw, 150px);

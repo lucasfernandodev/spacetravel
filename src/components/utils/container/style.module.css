@@ -1,4 +1,5 @@
 .container{
+  --padding-left: 11.4583333333vw;
   width: 100%;
   max-width: calc(100vw - 22.9166666667vw);
   margin: 0 auto;
@@ -13,7 +14,7 @@
 
 @media (max-width: 920px){
   .container{
-    max-width: calc(100vw - 11.4166666667vw);
+    max-width: calc(100vw - 11.4583333333vw);
   }
 }
 

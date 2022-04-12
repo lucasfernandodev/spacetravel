@@ -311,4 +311,17 @@
     width: 100%;
     max-width: calc(100% - 48px);
   }
+
+  .container .page .info{
+    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .page .info *{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
