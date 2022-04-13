@@ -4,7 +4,7 @@ import Layout from "../../components/utils/Layout";
 import Typography from "../../components/utils/Typography";
 import style from "./style.module.css";
 import database from '../../lib/data.json';
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Technology = () => {
 
@@ -12,6 +12,7 @@ const Technology = () => {
   console.log(technology)
   const indicatorsRef = useRef<HTMLElement>(null);
   const [currentData, setCurrentData] = useState(technology[0]);
+  const [isPortrait, setIsPortrait] = useState(true)
   
   function handleSlider(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
     const currentElement = e.target as HTMLElement;
@@ -29,6 +30,19 @@ const Technology = () => {
     }
 
   }
+
+  useEffect(() => {
+    const spaceTravel = document.querySelector('body');
+
+    if(spaceTravel !== null && typeof spaceTravel.clientWidth !== 'undefined'){
+      if(spaceTravel.clientWidth <= 769){
+        setIsPortrait(false)
+      }else{
+        setIsPortrait(true)
+      }
+    }
+    console.log(spaceTravel?.clientWidth)
+  }, [])
   
   return (
     <Layout className={style.technology}>
@@ -52,7 +66,7 @@ const Technology = () => {
             </article>
           </section>
           <section className={style.sliderImages}>
-            <img src={currentData.images.portrait} alt={currentData.name} />
+            <img src={isPortrait === true ? currentData.images.portrait : currentData.images.landscape} alt={currentData.name} />
           </section>
         </div>
       </Container>

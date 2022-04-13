@@ -17,7 +17,7 @@
   z-index: -1;
   background-color: #0b0d17;
   background: url("../../assets/images/bg-destination-desktop.png");
-  background-size: 900px cover;
+  background-size: cover;
   background-blend-mode: screen;
   opacity: 0.4;
   width: 100%;
@@ -26,37 +26,50 @@
 
 .container{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  min-height: 100vh;
-  justify-content: space-between;
-  padding-top: var(--headerHeight);
-  align-content: center;
-}
-
-.presentation{
-  display: flex;
   flex-direction: column;
-  gap: 100px;
-  max-width: 573px;
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  padding-top: calc(var(--headerHeight) * 2);
+  height: auto;
+
 }
 
-
-
-
-.presentation .presentationTitle{
+.container .presentationTitle{
   display: flex;
   gap: 28px;
   text-transform: uppercase;
+  width: 100%;
+  max-width: unset;
 }
 
-.presentation .presentationTitle span{
+.container .presentationTitle span{
   font-weight: bold;
   opacity: 0.24;
 }
 
-.presentation img{
+.container .slider{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  gap: 157px;
+}
+
+
+.container .slider .presentation{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  max-width: 573px;
+  margin-top: 76px;
+}
+
+
+.container .slider .presentation img{
   margin-left: 60px;
   width: 100%;
   height: 100%;
@@ -79,14 +92,14 @@
 }
 
 
-.page {
+.container .slider .page {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 444px;
 }
 
-.page .pageNavigation ul{
+.container .slider .page .pageNavigation ul{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -95,41 +108,41 @@
 
 }
 
-.page .pageNavigation ul li{
+.container .slider .page .pageNavigation ul li{
   border-bottom: 2px solid transparent;
   cursor: pointer;
 }
 
-.page .pageNavigation ul li:hover{
+.container .slider .page .pageNavigation ul li:hover{
   border-color: rgba(255, 255, 255, 0.5)
 }
 
-.page .pageNavigation ul li *{
+.container .slider .page .pageNavigation ul li *{
   color: var(--color-typography-light-medium);
   font-weight: 400;
 }
 
-.page .pageNavigation ul li.active{
+.container .slider .page .pageNavigation ul li.active{
   border-color: #fff;
 }
 
-.page .pageNavigation ul li.active *{
+.container .slider .page .pageNavigation ul li.active *{
   color: #fff;
 
 }
 
-.page .title{
+.container .slider .page .title{
   text-transform: uppercase;
   margin-top: 37px;
 }
 
-.page .description{
+.container .slider .page .description{
   color: var(--color-typography-light-medium);
   display: flex;
   min-height: 130px;
 }
 
-.page hr{
+.container .slider .page hr{
   border-color: #383B4B;
   border-style: solid;
   margin-top: 54px;
@@ -137,7 +150,7 @@
   margin-bottom: 30px;
 }
 
-.page .info{
+.container .slider .page .info{
   display: flex;
   flex-wrap: wrap;
   gap: 80px;
@@ -146,32 +159,50 @@
   width: 100%;
 }
 
-.page .info .infoSpace{
+.container .slider .page .info .infoSpace{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   gap: 12px;
 }
 
-.page .info .subTitle{
+.container .slider .page .info .subTitle{
   color: var(--color-typography-light-medium);
+}
+
+@media (min-height: 1000px){
+
+  .presentation img{
+    max-width: 550px;
+    max-height: 550px;
+  }
+  .destination::after {
+    background-size: cover;
+  }
 }
 
 
 @media(max-height: 800px){
   
-  .presentation{
+  .container{
+   align-items: center;
+  }
+  
+  .container .slider{
+    justify-content: center;
+  }
+  .container .slider .presentation{
     display: flex;
     flex-direction: column;
     gap: 50px;
   }
 
-  .presentation .presentationTitle{
+  .container .presentationTitle{
     display: flex;
     gap: 14px;
   }
 
-  .presentation img{
+  .container .slider .presentation img{
     margin-left: 30px;
     max-width: 360px;
     max-height: 360px;
@@ -204,88 +235,99 @@
 
 }
 
-@media (min-height: 900px){
-
-  .presentation img{
-    max-width: 550px;
-    max-height: 550px;
+@media (max-width: 1396px) and (max-height:800px){
+  .container .slider{
+    gap: 64px;
+    justify-content: space-between;
   }
-  .destination::after {
-    background-size: cover;
-  }
-}
 
-@media(min-height: 1080px){
-  .container{
-    justify-content: center;
-    gap: 200px;
-  }
-  .page{
-    margin-top: 0;
-  }
-}
-
-
-@media (max-width: 1100px){
-  .presentation img{
+  .container .slider .presentation img{
     margin-left: 30px;
     max-width: 300px;
     max-height: 300px;
   }
-}
 
-@media (max-width: 1000px){
-  .page{
-    max-width: 350px
+  .container .slider .page hr{
+    border-color: #383B4B;
+    border-style: solid;
+    margin: 30px 0;
+    width: 100%;
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 1180px){
+  .container .slider{
+    gap: 32px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) and (min-height: 1024px){
   .destination::after {
     background-image: url(../../lib/assets/destination/background-destination-tablet.jpg);
+    background-size: cover;
   }
 
-  .container{
-    justify-content: center;
+  .destination .container{
+    justify-content: flex-start;
     align-items: center;
-    gap: 53px;
-  }
-
-  .presentation{
     gap: 60px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    max-width: 573px;
+    padding-top: calc(var(--headerHeight) + 40px);
+    padding-bottom: 0;
+    height: 100%;
   }
 
-  .presentation .presentationTitle{
+  .container .presentationTitle{
     width: 100%;
     font-size: 20px;
+    max-width: unset;
   }
 
-  .presentation img{
+  .destination .container .slider{
+    gap: 53px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .container .slider .presentation{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: unset;
+    margin: 0;
+  }
+
+  .container .slider .presentation img{
     margin-left: 30px;
     max-width: 300px;
     max-height: 300px;
   }
 
-  .page{
-    max-width: 573px;
-    justify-content: center;
-    align-items: center;
+  .destination .container .presentation
+  {
+    width: 100%;
+    max-width: unset;
   }
 
-  .page .description{
+
+  .destination .container .page{
+    max-width: 573px 
+  }
+
+  .page .description,
+  .page .title,
+  .page .pageNavigation ul{
+    justify-content: center;
     text-align: center;
   }
+
   .page .pageNavigation ul li *{
    font-size: 16px;
   }
 
-  .page hr{
-    margin-top: 36px;
-    margin-bottom: 28px;
+  .destination .container .slider .page hr{
+    margin-top: 24px;
+    margin-bottom: 16px;
   }
 
   .page .info{
@@ -294,34 +336,69 @@
   }
 }
 
-@media (max-width: 768px) and (max-height: 900px){
-  .destination::after {
-    background-size: cover;
-  }
-  .container{
-    padding: calc(var(--headerHeight) + 32px) 0;
-    height: 100%;
+@media (max-width: 768px) and (max-height: 800px){
+  .destination .container{
+    padding-top: calc(var(--headerHeight) + 40px);
   }
 
+  .container .slider .page *{
+    justify-content: center;
+    text-align: center;
+  }
 }
 
-@media (max-width: 730px){
-  .presentation,
-  .page{
+
+@media (max-width: 690px){
+
+  .destination .container{
+    padding-top: calc(var(--headerHeight) + 16px);
+    padding-bottom: 0;
+    gap: 32px;
+  }
+
+  .container .slider{
+    gap: 26px
+  }
+
+  .destination .container .presentationTitle{
+    text-align: center;
+    justify-content: center;
+  }
+  .container .slider .presentation{
     width: 100%;
-    max-width: calc(100% - 48px);
-  }
-
-  .container .page .info{
-    gap: 16px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-
-  .page .info *{
     justify-content: center;
     align-items: center;
+    display: flex;
+    margin: 0
+  }
+
+
+  .container .slider .presentation img{
+    margin-left: 0;
+    max-width: 170px;
+    max-height: 170px;
+  }
+
+  .container .slider .page *{
     text-align: center;
+    justify-content: center;
+  }
+
+  .container .slider .page .title{
+    margin-top: 20px;
+  }
+
+  .container .slider .page .description{
+    max-height: 121px;
+    min-height: 121px;
+  }
+
+  .container .slider .page .info{
+    align-content: center;
+    gap: 24px;
+  }
+
+  .container .slider .page hr{
+    margin: 32px 0;
   }
 }

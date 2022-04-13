@@ -122,6 +122,10 @@
     --text-maxSize: 16px;
     --subHeader1-maxSize: 20px;
   }
+  .Text {
+    font-size: 15px;
+    line-height: 25px;
+  }
 }
 
 @media (max-width: 360px){

@@ -34,6 +34,7 @@
   flex-wrap: wrap;
   padding-left: var(--padding-left);
   padding-top: calc(var(--headerHeight) * 2);
+  height: auto;
 }
 
 .technology .container .presentationTitle{
@@ -53,6 +54,7 @@
 .technology .container .slider{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -62,9 +64,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 80px;
+  gap: 5.55555555556vw;
   width: 100%;
   padding-top: 15.2222222222vh;
+  max-width: calc(550px + 80px);
 }
 
 .technology .container .slider .SliderWrapper .sliderIndicators{
@@ -139,7 +142,7 @@
   object-position: center;
 }
 
-@media (min-width: 1400px){
+@media (min-height: 800px){
   .technology::after {
     background-size: cover;
   }
@@ -156,6 +159,7 @@
     width: 100%;
     max-width: 390px;
   }
+
   .technology .container .slider .SliderWrapper .sliderContent .subtitle{
     color: #D0D6F9;
     font-size: 13px;
@@ -172,4 +176,243 @@
     padding-top: 7.61111111111vh;
   }
   
+}
+
+
+@media (max-width: 768px) and (min-height: 1024px), (max-width:950px){
+  .technology::after{
+    background-image: url(../../lib/assets/technology/background-technology-tablet.jpg);
+  }
+  .technology .container {
+    padding-left: 0;
+    padding-top: calc(var(--headerHeight) + 40px);
+    gap: 60px;
+  }
+
+  .technology .container .slider {
+    flex-direction: row;
+    gap: 56px;
+    justify-content: center;
+  }
+
+
+  .technology .container .slider .SliderWrapper{
+    order: 2;
+    padding-top: 0;
+    flex-direction: row;
+    justify-content: center;
+    max-width: var(--containerWidth);
+    gap: 44px;
+  }
+
+  .technology .container .slider .SliderWrapper .sliderIndicators{
+    width: 100%;
+    max-width: unset;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .technology .container .slider .SliderWrapper .sliderIndicators .btn{
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .technology .container .slider .SliderWrapper .sliderContent{
+    justify-content: center;
+    align-items: center;
+    max-width: var(--containerWidth);
+  }
+
+  .technology .container .slider .SliderWrapper .sliderContent *{
+    text-align: center;
+  }
+
+  .technology .container .slider .sliderImages{
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+    max-height: 310px;
+  }
+
+  .technology .container .slider .sliderImages img{
+    max-height: 310px;
+  }
+
+  .technology .container .presentationTitle{
+    max-width: var(--containerWidth);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1150px) and (max-height: 800px){
+  .technology .container .slider .SliderWrapper{
+    max-width: 50vw;
+  }
+  .technology .container .slider .SliderWrapper .sliderContent{
+    max-width: 390px;
+  }
+  .technology .container .slider .sliderImages{
+    max-width: calc(50vw - 116px);
+  }
+}
+
+@media (max-width: 1024px) and (max-height: 800px){
+  .technology .container .slider .SliderWrapper{
+    gap: 16px;
+  }
+
+  .technology .container .slider .sliderImages{
+    min-width: 390px;
+  }
+}
+
+@media(max-width: 950px){
+  .technology .container{
+    width: 100%;
+    max-width: unset;
+    height: 100%;
+  }
+  .technology .container .slider{
+    flex-direction: column;
+  }
+  .technology .container .slider .sliderImages{
+    padding: 0;
+    margin: 0;
+    height:auto;
+    overflow: hidden;
+  }
+  .technology .container .slider .sliderImages img{
+    width: 100%;
+    height: auto;
+    min-width: unset;
+    max-height: 100%;
+    min-height: unset;
+    object-position: center;
+    object-fit: cover;
+  }
+}
+
+
+@media (max-width: 690px){
+
+  .technology::after{
+    background-image: url(../../lib/assets/technology/background-technology-mobile.jpg);
+  }
+
+  .technology .container {
+    padding-left: 0;
+    padding-top: calc(var(--headerHeight) + 16px);
+    gap: 32px;
+  }
+
+  .technology .container .presentationTitle{
+    text-align: center;
+    justify-content: center;
+  }
+
+  .technology .container .slider {
+    flex-direction: row;
+    gap: 34px;
+    justify-content: center;
+  }
+
+
+  .technology .container .slider .SliderWrapper{
+    order: 2;
+    padding-top: 0;
+    flex-direction: row;
+    justify-content: center;
+    max-width: var(--containerWidth);
+    gap: 26px;
+  }
+
+  .technology .container .slider .SliderWrapper .sliderIndicators{
+    width: 100%;
+    max-width: unset;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .technology .container .slider .SliderWrapper .sliderIndicators .btn{
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .technology .container .slider .SliderWrapper .sliderContent{
+    justify-content: center;
+    align-items: center;
+    max-width: var(--containerWidth);
+    min-height: 240px;
+    height: 100%;
+  }
+
+  .technology .container .slider .SliderWrapper .sliderContent *{
+    text-align: center;
+
+  }
+
+  .technology .container .slider .SliderWrapper .sliderContent .description{
+    min-height: unset;
+  }
+
+  .technology .container .slider .sliderImages{
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+    max-height: 30.2734375vh;
+    min-height: 170px;
+    padding-top: 0;
+    overflow: hidden;
+  }
+
+  .technology .container .slider .sliderImages img{
+    max-height: 30.2734375vh;
+    min-height: 170px;
+  }
+
+  .technology .container .presentationTitle{
+    max-width: var(--containerWidth);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 375px){
+  .technology .container{
+    padding-left: 0;
+    min-width: unset;
+  }
+  .technology .container .slider {
+    width: 100%;
+    align-content: center;
+    max-width: 100%;
+    min-width: unset;
+    min-width: unset;
+  }
+  .technology .container .slider .sliderContent,
+  .technology .container .slider .SliderWrapper{
+    max-width: 100%;
+    min-width: unset
+  }
+
+  .technology .container .slider .sliderContent{
+    margin: 0 auto;
+  }
+
+   .technology .container .slider .sliderImages{
+     width: 100%;
+     min-width: unset;
+     max-width: 100%;
+  }
+
+   .technology .container .slider .sliderImages img{
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    max-height: 170px;
+    min-height: unset;
+    object-fit: cover;
+  }
 }

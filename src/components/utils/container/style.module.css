@@ -1,32 +1,50 @@
-.container{
+:root{
+  --containerWidth: calc(100vw - 22.9166666667vw);
   --padding-left: 11.4583333333vw;
+}
+
+
+.container{
+ 
   width: 100%;
-  max-width: calc(100vw - 22.9166666667vw);
+  max-width: var(--containerWidth);
   margin: 0 auto;
   height: 100vh;
 }
 
-@media (max-width: 1030px){
-  .container{
-    max-width: calc(100vw - 14.5vw);
+@media (max-width:1280px){
+  :root{
+    --padding-left:5.72916666665vw
+  }
+}
+
+@media (max-width: 1080px){
+  :root{
+    --containerWidth: calc(100vw - 14.5vw);
+    --padding-left:5.72916666665vw
   }
 }
 
 @media (max-width: 920px){
-  .container{
-    max-width: calc(100vw - 11.4583333333vw);
+  :root{
+    --containerWidth: calc(100vw - 11.4583333333vw);
+  }
+}
+
+@media (max-width: 769px){
+  :root{
+    --containerWidth: calc(100vw - 80px);
   }
 }
 
 @media (max-width: 720px){
-  .container{
-    max-width: calc(100vw - 4.72222222222vw);
+  :root{
+    --containerWidth: calc(100vw - 4.72222222222vw);
   }
 }
 
 @media (max-width: 690px){
-  .container{
-    
-    max-width: calc(100vw - 48px);
+  :root{
+    --containerWidth: calc(100vw - 48px);
   }
 }
