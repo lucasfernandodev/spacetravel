@@ -141,6 +141,9 @@
 }
 
 @media (max-width: 1396px) and (max-height: 800px){
+  .container{
+    max-height: 100vh;
+  }
   .sliderMain .sliderContent .name{
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -160,6 +163,18 @@
     border-radius: 50%;
     background: #fff;
     cursor: pointer;
+  }
+
+  .container .sliderImage{
+    height: 100%;
+    align-items: flex-end;
+  }
+
+  .sliderImage img{
+    width: 100%;
+    max-width: 490px;
+    min-height: unset;
+
   }
 }
 
